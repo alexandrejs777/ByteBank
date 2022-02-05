@@ -1,0 +1,7 @@
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\bin\Debug\ByteBank.exe.config
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\bin\Debug\ByteBank.exe
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\bin\Debug\ByteBank.pdb
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\obj\Debug\ByteBank.csproj.AssemblyReference.cache
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\obj\Debug\ByteBank.exe
+D:\Cursos\Alura\Formacao-DotNet\C#_Orientacao_A_Objetos\ByteBank\ByteBank\obj\Debug\ByteBank.pdb
