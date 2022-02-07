@@ -10,20 +10,39 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            ContaCorrente contaBruno = new ContaCorrente();
+            ContaCorrente contaDoBruno = new ContaCorrente();
 
-            contaBruno.titular = "Bruno";
+            contaDoBruno.titular = "Bruno";
 
-            Console.WriteLine(contaBruno.saldo);
+            Console.WriteLine("Saldo inicial da conta do Bruno: " + contaDoBruno.saldo);
 
-            bool resultado = contaBruno.Sacar(50);
+            bool resultadoDoSaque = contaDoBruno.Sacar(200);
 
-            Console.WriteLine(contaBruno.saldo);
-            Console.WriteLine(resultado);
+            Console.WriteLine("Saldo da conta do Bruno após o saque: " + contaDoBruno.saldo);
+            Console.WriteLine(resultadoDoSaque);
 
-            contaBruno.Depositar(500);
-            Console.WriteLine(contaBruno.saldo);
-    
+            contaDoBruno.Depositar(500);
+            Console.WriteLine("Saldo da conta do Bruno após o depósito: " + contaDoBruno.saldo);
+
+            ContaCorrente contaDaGabriela = new ContaCorrente();
+
+            contaDaGabriela.titular = "Gabriela";
+
+            Console.WriteLine("Saldo da conta do Bruno: " + contaDoBruno.saldo);
+            Console.WriteLine("Saldo da conta da Gabriela: " + contaDaGabriela.saldo);
+
+            bool resultadoDaTransferencia = contaDoBruno.Transferir(200, contaDaGabriela);
+
+            Console.WriteLine("Saldo do Bruno após transferência: " + contaDoBruno.saldo);
+            Console.WriteLine("Saldo da Gabriela após transferência: " + contaDaGabriela.saldo);
+            Console.WriteLine(resultadoDaTransferencia);
+
+            contaDaGabriela.Transferir(100, contaDoBruno);
+            Console.WriteLine("Saldo da Gabriela após transferência: " + contaDaGabriela.saldo);
+            Console.WriteLine("Saldo do Bruno após transferência: " + contaDoBruno.saldo);
+            
+
+
             Console.ReadLine();
         }
     }
