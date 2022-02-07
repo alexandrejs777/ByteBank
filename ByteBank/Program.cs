@@ -20,6 +20,9 @@ namespace ByteBank
 
             Console.WriteLine(contaBruno.saldo);
             Console.WriteLine(resultado);
+
+            contaBruno.Depositar(500);
+            Console.WriteLine(contaBruno.saldo);
     
             Console.ReadLine();
         }
