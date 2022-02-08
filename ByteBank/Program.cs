@@ -10,30 +10,12 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            //Cliente gabriela = new Cliente();
-
-            //gabriela.nome = "Gabriela";
-            //gabriela.cpf = "439.684.798.10";
-            //gabriela.profissao = "Desenvolvedora C#";
-
             ContaCorrente conta = new ContaCorrente();
 
-            //conta.titular = gabriela;
-            conta.agencia = 3067;
-            conta.numero = 10030678;
-            conta.saldo = 500;
+            // conta.saldo = -10;
+            conta.DefinirSaldo(-10);
 
-            if (conta.titular == null)
-            {
-                Console.WriteLine("Ops, a referência a conta.titular é nula!");
-            }
-
-            //gabriela.nome = "Gabriela Costa";
-
-            //Console.WriteLine(gabriela.nome);
-            Console.WriteLine(conta.titular.nome);
-            Console.WriteLine(conta.titular.cpf);
-            Console.WriteLine(conta.titular.profissao);
+            Console.WriteLine(conta.ObterSaldo());
 
             Console.ReadLine();
         }
