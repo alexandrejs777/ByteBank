@@ -10,38 +10,23 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            ContaCorrente contaDoBruno = new ContaCorrente();
+            Cliente gabriela = new Cliente();
 
-            contaDoBruno.titular = "Bruno";
+            gabriela.nome = "Gabriela";
+            gabriela.cpf = "439.684.798.10";
+            gabriela.profissao = "Desenvolvedora C#";
 
-            Console.WriteLine("Saldo inicial da conta do Bruno: " + contaDoBruno.saldo);
+            ContaCorrente conta = new ContaCorrente();
 
-            bool resultadoDoSaque = contaDoBruno.Sacar(200);
+            conta.titular = gabriela;
+            conta.agencia = 3067;
+            conta.numero = 10030678;
+            conta.saldo = 500;
 
-            Console.WriteLine("Saldo da conta do Bruno após o saque: " + contaDoBruno.saldo);
-            Console.WriteLine(resultadoDoSaque);
+            gabriela.nome = "Gabriela Costa";
 
-            contaDoBruno.Depositar(500);
-            Console.WriteLine("Saldo da conta do Bruno após o depósito: " + contaDoBruno.saldo);
-
-            ContaCorrente contaDaGabriela = new ContaCorrente();
-
-            contaDaGabriela.titular = "Gabriela";
-
-            Console.WriteLine("Saldo da conta do Bruno: " + contaDoBruno.saldo);
-            Console.WriteLine("Saldo da conta da Gabriela: " + contaDaGabriela.saldo);
-
-            bool resultadoDaTransferencia = contaDoBruno.Transferir(200, contaDaGabriela);
-
-            Console.WriteLine("Saldo do Bruno após transferência: " + contaDoBruno.saldo);
-            Console.WriteLine("Saldo da Gabriela após transferência: " + contaDaGabriela.saldo);
-            Console.WriteLine(resultadoDaTransferencia);
-
-            contaDaGabriela.Transferir(100, contaDoBruno);
-            Console.WriteLine("Saldo da Gabriela após transferência: " + contaDaGabriela.saldo);
-            Console.WriteLine("Saldo do Bruno após transferência: " + contaDoBruno.saldo);
-            
-
+            Console.WriteLine(gabriela.nome);
+            Console.WriteLine(conta.titular.profissao);
 
             Console.ReadLine();
         }
