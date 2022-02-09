@@ -4,8 +4,9 @@ namespace ByteBank
     public class ContaCorrente
     {
         public Cliente Titular { get; set; }
-        public int agencia;
-        public int numero;
+        public int Agencia { get; set; }
+        public int Numero { get; set; }
+
         private double _saldo = 100;
 
 
@@ -25,6 +26,17 @@ namespace ByteBank
             }
         }
 
+
+        // Construtores
+
+        public ContaCorrente(int agencia, int numero)
+        {
+            Agencia = agencia;
+            Numero = numero;
+        }
+
+
+        // Métodos e Funções
 
         public bool Sacar(double valor)
         {
