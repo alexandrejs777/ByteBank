@@ -26,6 +26,8 @@ namespace ByteBank
             }
         }
 
+        public static int TotalDeContasCriadas { get; private set; }
+
 
         // Construtores
 
@@ -33,6 +35,8 @@ namespace ByteBank
         {
             Agencia = agencia;
             Numero = numero;
+
+            TotalDeContasCriadas++;
         }
 
 
