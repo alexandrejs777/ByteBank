@@ -12,7 +12,7 @@ namespace ByteBank
         static void Main(string[] args)
         {
             Funcionario carlos = new Funcionario();
-            Diretor roberta = new Diretor();
+
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
             carlos.Nome = "Carlos";
@@ -21,15 +21,22 @@ namespace ByteBank
 
             gerenciador.Registrar(carlos);
 
-            Console.WriteLine(carlos.Nome);
-            Console.WriteLine(carlos.GetBonificacao());
 
-
+            Diretor roberta = new Diretor();
             roberta.Nome = "Roberta";
             roberta.CPF = "798.365.439-03";
             roberta.Salario = 5000;
 
+            Funcionario robertaTeste = roberta;
+
+            Console.WriteLine("Bonificação de uma referência de Diretor: " + roberta.GetBonificacao());
+            Console.WriteLine("Bonificação de uma referência de Funcionária: " + robertaTeste.GetBonificacao());
+
             gerenciador.Registrar(roberta);
+
+
+            Console.WriteLine(carlos.Nome);
+            Console.WriteLine(carlos.GetBonificacao());
 
             Console.WriteLine(roberta.Nome);
             Console.WriteLine(roberta.GetBonificacao());
