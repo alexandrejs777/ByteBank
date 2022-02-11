@@ -14,7 +14,7 @@ namespace ByteBank.Funcionarios
 
 
         // Metodos
-        public virtual double GetBonificacao()
+        public  double GetBonificacao()
         {
             return Salario * 0.10;
         }
