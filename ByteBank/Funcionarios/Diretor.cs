@@ -8,8 +8,14 @@ namespace ByteBank.Funcionarios
 {
     public class Diretor : Funcionario
     {
+        // Construtor
+        public Diretor(string cpf) : base(cpf)
+        {
+            Console.WriteLine("Criando um novo DIRETOR");
+        }
+
         // Metodos
-        public  double GetBonificacao()
+        public override double GetBonificacao()
         {
             return Salario + base.GetBonificacao();
         }
