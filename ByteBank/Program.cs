@@ -32,10 +32,14 @@ namespace ByteBank
             Funcionario igor = new Auxiliar("981.198.778-53");
             igor.Nome = "Igor";
 
+            Funcionario guilherme = new Desenvolvedor("465.398.739-16");
+            guilherme.Nome = "Guilherme";
+
             gerenciadorBonificacao.Registrar(roberta);
             gerenciadorBonificacao.Registrar(pedro);
             gerenciadorBonificacao.Registrar(camila);
             gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(guilherme);
 
             Console.WriteLine("Total de bonificação do mês: " + gerenciadorBonificacao.GetTotalBonificacao());
         }
