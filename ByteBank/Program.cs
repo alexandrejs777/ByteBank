@@ -14,12 +14,16 @@ namespace ByteBank
         {
             //CalcularBonificacao();
 
-            UsarSistema();
+            //UsarSistema();
+
+            ContaCorrente conta = new ContaCorrente(167, 1674182);
+
+            Console.WriteLine(ContaCorrente.TaxaOperacao);
 
             Console.ReadLine();
         }
 
-        public static void UsarSistema()
+        /* public static void UsarSistema()
         {
             SistemaInterno sistemaInterno = new SistemaInterno();
 
@@ -32,6 +36,7 @@ namespace ByteBank
             camila.Senha = "abc";
 
             ParceiroComercial parceiro = new ParceiroComercial();
+            parceiro.Nome = "Parceiro";
             parceiro.Senha = "123456";
 
             sistemaInterno.Logar(roberta, roberta.Senha);
@@ -70,6 +75,6 @@ namespace ByteBank
             gerenciadorBonificacao.Registrar(guilherme);
 
             Console.WriteLine("Total de bonificação do mês: " + gerenciadorBonificacao.GetTotalBonificacao());
-        }
+        }*/
     }
 }

@@ -11,7 +11,12 @@ namespace ByteBank
     {
 
         public string Senha { get; set; }
+        public string Nome { get; set; }
 
+        public ParceiroComercial()
+        {
+            Console.WriteLine("Criando PARCEIRO COMERCIAL");
+        }
 
         public bool Autenticar(string senha)
         {

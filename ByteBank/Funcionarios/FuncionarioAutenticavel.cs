@@ -14,7 +14,7 @@ namespace ByteBank.Funcionarios
         public FuncionarioAutenticavel(string cpf, double salario)
             : base(cpf, salario)
         {
-            Console.WriteLine("Criando PARCEIRO COMERCIAL");
+
         }
 
         public bool Autenticar(string senha)
