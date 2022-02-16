@@ -1,20 +1,20 @@
 ﻿
+using System;
+
 namespace ByteBank
 {
     public class ContaCorrente
     {
         public Cliente Titular { get; set; }
-        public int Agencia { get; set; }
-        public int Numero { get; set; }
+        public int Agencia { get; }
+        public int Numero { get; }
 
         public static int TotalDeContasCriadas { get; private set; }
 
-        public static double TaxaOperacao { get; set; }
+        public static double TaxaOperacao { get; private set; }
 
 
         private double _saldo = 100;
-
-
         public double Saldo
         {
             get
@@ -36,10 +36,27 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
+            if (agencia <= 0)
+            {
+                throw new ArgumentException("O número da agência não pode ser igual ou menor que zero!", nameof(agencia));
+            }
+
+            if (numero <= 0)
+            {
+                throw new ArgumentException("O número da conta não pode ser igual ou menor que zero!", nameof(numero));
+            }
+
             Agencia = agencia;
             Numero = numero;
 
-            TaxaOperacao = 30 / TotalDeContasCriadas;
+            //try
+            //{
+                TaxaOperacao = 30 / TotalDeContasCriadas;
+            //}
+            //catch (DivideByZeroException)
+            //{
+                //Console.WriteLine("Não foi possível dividir a taxa de operação. Pois o total de contas criadas é igual a zero.");
+            //}
 
             TotalDeContasCriadas++;
         }
