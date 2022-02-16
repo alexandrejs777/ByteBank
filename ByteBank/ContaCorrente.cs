@@ -49,30 +49,22 @@ namespace ByteBank
             Agencia = agencia;
             Numero = numero;
 
-            //try
-            //{
-                TaxaOperacao = 30 / TotalDeContasCriadas;
-            //}
-            //catch (DivideByZeroException)
-            //{
-                //Console.WriteLine("Não foi possível dividir a taxa de operação. Pois o total de contas criadas é igual a zero.");
-            //}
-
             TotalDeContasCriadas++;
+            TaxaOperacao = 30 / TotalDeContasCriadas;
+
         }
 
 
         // Métodos e Funções
 
-        public bool Sacar(double valor)
+        public void Sacar(double valor)
         {
             if (this._saldo < valor)
             {
-                return false;
+                throw new SaldoInsuficienteException("Saldo insuficiente para o saque no valor de " + valor);
             }
 
             this._saldo -= valor;
-            return true;
 
         }
 
