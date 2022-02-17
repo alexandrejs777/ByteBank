@@ -85,7 +85,7 @@ namespace ByteBank
         }
 
 
-        public void Transferir(double valor, ContaCorrente contaDeDestino)
+        public void Transferir(double valor, ContaCorrente contaDestino)
         {
             if (valor < 0)
             {
@@ -96,13 +96,14 @@ namespace ByteBank
             {
                 Sacar(valor);
             }
-            catch(SaldoInsuficienteException)
+            catch(SaldoInsuficienteException ex)
             {
                 ContadorDeTransferenciasNaoPermitidas++;
-                throw new SaldoInsuficienteException(Saldo, valor);
+                //throw new SaldoInsuficienteException(Saldo, valor);
+                throw new OperacaoFinanceiraException("Operação não realizada!", ex);
             }
             
-            contaDeDestino.Depositar(valor);
+            contaDestino.Depositar(valor);
 
         }
     }

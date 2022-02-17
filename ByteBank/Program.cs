@@ -12,46 +12,32 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            //CalcularBonificacao();
 
-            //UsarSistema();
             try
             {
-                ContaCorrente conta = new ContaCorrente(167, 167485);
+                ContaCorrente conta1 = new ContaCorrente(167, 167485);
                 ContaCorrente conta2 = new ContaCorrente(167, 167486);
 
-                conta.Depositar(50);
-                conta2.Transferir(10000, conta);
-                Console.WriteLine(conta.Saldo);
-                conta.Sacar(500);
-                Console.WriteLine(conta.Saldo);
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine("Argumento com problema: " + ex.ParamName);
-                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException");
-                Console.WriteLine(ex.Message);
-            }
-            catch (SaldoInsuficienteException ex)
-            {
-                Console.WriteLine(ex.Saldo);
-                Console.WriteLine(ex.ValorSaque);
+                //conta1.Transferir(10000, conta2);
+                conta1.Sacar(10000);
 
-                Console.WriteLine(ex.StackTrace);
-
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("Exceção do tipo SaldoInsuficienteException");
-
-                Console.WriteLine("Total de saques não permitidos: " + ContaCorrente.ContadorDeSaquesNaoPermitidos);
-                Console.WriteLine("Total de transferências não permitidas: " + ContaCorrente.ContadorDeTransferenciasNaoPermitidas);
             }
-            catch (Exception ex)
+            catch(OperacaoFinanceiraException e)
             {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+
+                //Console.WriteLine("Informações da INNER EXCEPTION (exceção interna): ");
+
+                //Console.WriteLine(e.InnerException.Message);
+                //Console.WriteLine(e.InnerException.StackTrace);
             }
+
                         
             Console.WriteLine("Operação finalizada! Aperte Enter para encerrar o programa.");
+
+            //CalcularBonificacao();
+            //UsarSistema();
 
             Console.ReadLine();
         }
