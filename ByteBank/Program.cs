@@ -2,6 +2,7 @@
 using ByteBank.Sistemas;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,43 @@ namespace ByteBank
         static void Main(string[] args)
         {
 
+            CarregarContas();
+
+                        
+            Console.WriteLine("Operação finalizada! Aperte Enter para encerrar o programa.");
+
+            //CalcularBonificacao();
+            //UsarSistema();
+            //TestaInnerException();
+
+            Console.ReadLine();
+        }
+
+        private static void CarregarContas()
+        {
+            LeitorDeArquivo leitor = null; 
+            try
+            {
+                leitor = new LeitorDeArquivo("contas.txt");
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Exceção do tipo IOException capturada e tratada!");
+            }
+            finally
+            {
+                if (leitor != null)
+                {
+                    leitor.Fechar();
+                }
+            }  
+        }
+
+        public static void TestaInnerException()
+        {
             try
             {
                 ContaCorrente conta1 = new ContaCorrente(167, 167485);
@@ -22,7 +60,7 @@ namespace ByteBank
                 conta1.Sacar(10000);
 
             }
-            catch(OperacaoFinanceiraException e)
+            catch (OperacaoFinanceiraException e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
@@ -32,14 +70,6 @@ namespace ByteBank
                 //Console.WriteLine(e.InnerException.Message);
                 //Console.WriteLine(e.InnerException.StackTrace);
             }
-
-                        
-            Console.WriteLine("Operação finalizada! Aperte Enter para encerrar o programa.");
-
-            //CalcularBonificacao();
-            //UsarSistema();
-
-            Console.ReadLine();
         }
 
         /* public static void UsarSistema()
