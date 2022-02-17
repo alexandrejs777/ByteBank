@@ -21,7 +21,7 @@ namespace ByteBank
                 ContaCorrente conta2 = new ContaCorrente(167, 167486);
 
                 conta.Depositar(50);
-                conta2.Transferir(-550, conta);
+                conta2.Transferir(10000, conta);
                 Console.WriteLine(conta.Saldo);
                 conta.Sacar(500);
                 Console.WriteLine(conta.Saldo);
@@ -34,16 +34,23 @@ namespace ByteBank
             }
             catch (SaldoInsuficienteException ex)
             {
+                Console.WriteLine(ex.Saldo);
+                Console.WriteLine(ex.ValorSaque);
+
+                Console.WriteLine(ex.StackTrace);
+
                 Console.WriteLine(ex.Message);
                 Console.WriteLine("Exceção do tipo SaldoInsuficienteException");
+
+                Console.WriteLine("Total de saques não permitidos: " + ContaCorrente.ContadorDeSaquesNaoPermitidos);
+                Console.WriteLine("Total de transferências não permitidas: " + ContaCorrente.ContadorDeTransferenciasNaoPermitidas);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
-
-            
+                        
             Console.WriteLine("Operação finalizada! Aperte Enter para encerrar o programa.");
 
             Console.ReadLine();
